@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <div class="container text-center mt-3">
+    <h1 class="mt-2">Hello I'm {{me.first_name}} {{me.last_name}}</h1>
+    <h2 class="mt-5">I ENJOY</h2>
+    <section class="menu-container">
+      {% for interest in me.interests %} 
+      <div class="menu-card">
+        <h2 class="menu-item">{{interest.name}}</h2>
+        <div class="img-container">
+          <div class="img-overlay">
+          </div>
+          <img
+            src="{{interest.image}}"
+            alt="" class="menu-img">
+        </div>
+        <h4 class="item-price">{{interest.desc}}</h4>
+        <button class="btn"><a href="/interest/{{interest.name}}">Visit</a> </button>
+      </div>
+  
+      {% endfor %}
+    </section>
+    <img class="meme" src="{{me.meme}}" alt="">
+     
+      
+
+{% endblock %}
