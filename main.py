@@ -49,6 +49,7 @@ def create_app(test_config=None):
         
         data = getInterest(interest, me)
         return render_template('interest.html', data=data)
-    app.run(debug=True, port=os.getenv("PORT", default=5000))
     return app
-    
+
+app = create_app()
+app.run(debug=True, port=os.getenv("PORT", default=5000))
